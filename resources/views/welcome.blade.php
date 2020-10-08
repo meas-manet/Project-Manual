@@ -1,28 +1,32 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+@extends('layouts.master')
+<link href="{{ asset('css/app.css') }}" rel="stylesheet">
+@section('content')
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
-    <!-- Styles -->
-    
-
-    <title>Manual Download</title>
-  </head>
-  <body>
+    <div class="container d-flex justify-content-center">
+    <div class="noscroll">
+        <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <img src="/img/Frontpage.svg" class="img-fluid" alt="Max-width 100%">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5 class="text-dark">Manuals Online</h5>
+                    <p class="text-dark">Thousands of free manuals. An engaged and helpful community. &nbsp;<a href="{{ url('/posts') }}"><button type="button" class="btn btn btn-dark btn-sm">See Posts</button></a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@endsection
 
     {{-- nav bar  --}}
 
-      <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+      {{-- <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
           <div class="container">
                 <a class="navbar-brand" href="{{url('/')}}">Manual</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
                 </button>
+
+                <a href="/posts">Posts</a>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav mr-auto">
 
@@ -47,10 +51,10 @@
                     </ul>
                 </div>
             </div>
-      </nav>
+      </nav> --}}
           
       {{-- Search Bar --}}
-      <div class="container">
+      {{-- <div class="container">
         <br/>
         <div class="row justify-content-center">
                             <div class="col-12 col-md-10 col-lg-8">
@@ -75,9 +79,9 @@
                         </div>
     </div>
     <br>
-    <br>
+    <br>  --}}
 
-    <div class="album py-5 bg-light">
+    {{-- <div class="album py-5 bg-light">
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
@@ -97,7 +101,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
 
 
 {{-- <!DOCTYPE html>

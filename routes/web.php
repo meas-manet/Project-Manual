@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\UsersController;
+use App\Http\Controllers\PostsController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
@@ -42,3 +43,13 @@ Route::post('/edit/user/', [UserController::class, 'update'])->name('user.update
 
 Route::get('/edit/password/user/', [UserController::class, 'passwordEdit'])->name('password.edit');
 Route::post('/edit/password/user/', [UserController::class, 'passwordUpdate'])->name('password.update');
+
+
+Route::resource('/posts',PostsController::class);
+Route::post('/posts/create', [PostsController::class, 'store'])->name('posts.create');
+
+// Route::get('/posts/edit/',[PostsController::class, 'edit'])->name('post.edit');
+Route::post('/posts/edit/',[PostsController::class, 'update'])->name('post.update');
+Route::post('/posts',[PostsController::class, 'meDelete'])->name('post.delete');
+
+Route::get('/posts/{id}/download', [PostsController::class, 'download'])->name('post.download');

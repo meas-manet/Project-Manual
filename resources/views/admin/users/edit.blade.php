@@ -1,11 +1,11 @@
-@extends('layouts.app')
+@extends('layouts.master')
 
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Edit user')}}</div>
+            <div class="card shadow-sm p-3 mb-5 bg-white rounded">
+                <div class="card-header bg-dark text-white">{{ __('Edit user')}}</div>
 
                 <div class="card-body">
                     <form action="{{route('admin.users.update', $user)}}" method="POST">
@@ -14,8 +14,8 @@
                         <div class="form-group row">
                             <label for="email" class="col-md-2 col-form-label text-md-right">Email</label>
 
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ $user->email }}" required autocomplete="email" autofocus>
+                            <div class="col-md-10">
+                                <input id="email" type="email" class="shadow-none form-control @error('email') is-invalid @enderror" name="email" value="{{ $user->email }}" required autocomplete="email" autofocus>
 
                                 @error('email')
                                     <span class="invalid-feedback" role="alert">
@@ -31,8 +31,8 @@
                         <div class="form-group row">
                             <label for="name" class="col-md-2 col-form-label text-md-right">Name</label>
 
-                            <div class="col-md-6">
-                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ $user->name }}" required autofocus>
+                            <div class="col-md-10">
+                                <input id="name" type="text" class="shadow-none form-control @error('name') is-invalid @enderror" name="name" value="{{ $user->name }}" required autofocus>
 
                                 @error('name')
                                     <span class="invalid-feedback" role="alert">
@@ -49,7 +49,7 @@
                         {{ method_field('PUT') }}
                         <div class="form-group row">
                             <label for="roles" class="col-md-2 col-form-label text-md-right">Roles</label>
-                            <div class="col-md-6">
+                            <div class="col-md-10">
                                 @foreach($roles as $role)
                                 <div class="form-check">
                                     <input type="checkbox" name="roles[]" value="{{$role->id}}"
@@ -63,14 +63,17 @@
 
 
                         {{-- For Banned/UnBanned --}}
-                        <div class="form-group">
-                            <select name="isban" class="form-control">
-                                <option value="">-- Select BAN / UNBAN --</option>
-                                <option value="0">UNBAN</option>
-                                <option value="1">BAN</option>
-                            </select>
+                        <div class="form-group row">
+                            <label for="bans" class="col-md-2 col-form-label text-md-right">Ban Status</label>
+                            <div class="col-md-10">
+                                <select name="isban" class="form-control">
+                                    <option value="">-- Select BAN / UNBAN --</option>
+                                    <option value="0">UNBAN</option>
+                                    <option value="1">BAN</option>
+                                </select>
+                            </div>
                         </div>
-                        <button type="submit" class="btn btn-primary">Update</button>
+                        <button type="submit" class="btn btn-dark btn-lg btn-block">Update</button>
                     </form>
                 </div>
             </div>

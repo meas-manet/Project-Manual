@@ -1,11 +1,11 @@
-@extends('layouts.app')
+@extends('layouts.master')
 
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Users') }}</div>
+            <div class="card shadow-sm p-3 mb-5 bg-white rounded">
+                <div class="card-header bg-dark text-white">{{ __('Users') }}</div>
 
                 <div class="card-body">
                     <table class="table table-borderless">
@@ -28,22 +28,22 @@
                                 <td>{{ implode(',', $user->roles()->get()->pluck('name')->toArray())}}</td>
                                 <td>
                                     @can('edit-users')
-                                        <a href="{{route('admin.users.edit' , $user->id)}}"><button type="button" class="btn btn-primary float-left">Edit</button></a>
+                                        <a href="{{route('admin.users.edit' , $user->id)}}"><button type="button" class="btn btn-secondary btn-sm float-left" style="margin-right: 10px;" >Edit</button></a>
                                     @endcan
 
                                     @can('delete-users')
                                     <form action="{{route('admin.users.destroy', $user)}}" method="POST" class="float-left">
                                         @csrf
                                         {{method_field('DELETE')}}
-                                        <button type="submit" class="btn btn-danger">Delete</button>
+                                        <button type="submit" class="btn btn-secondary btn-sm">Delete</button>
                                     </form>
                                     @endcan
                                 </td>
                                 <td>
                                     @if($user->isban == '0')
-                                        <label class="badge badge-primary">Not Banned</label>
+                                        <label class="badge badge-info text-light">Not Banned</label>
                                     @elseif($user->isban == '1')  
-                                        <label class="badge badge-danger">Banned</label>  
+                                        <label class="badge badge-danger text-dark">Banned</label>  
                                     @endif
                                     
                                 </td>
