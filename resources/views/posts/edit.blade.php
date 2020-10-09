@@ -62,3 +62,8 @@
         </div>
     </div>
 @endsection
+
+    
+<script type="text/javascript">
+    document.title = `Edit Post`;
+</script>

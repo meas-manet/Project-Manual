@@ -173,4 +173,8 @@ class PostsController extends Controller
         return Storage::download('public/cover_images/'.$post->cover_Image);
     }
 
+    public function viewPdf($id){
+        $post = Post::find($id);
+        return response()->file('storage/cover_images/'.$post->cover_Image);
+    }
 }

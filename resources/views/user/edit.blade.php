@@ -53,3 +53,8 @@
     </div>
 </div>
 @endsection
+
+    
+<script type="text/javascript">
+    document.title = `Edit User`;
+</script>

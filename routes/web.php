@@ -53,3 +53,4 @@ Route::post('/posts/edit/',[PostsController::class, 'update'])->name('post.updat
 Route::post('/posts',[PostsController::class, 'meDelete'])->name('post.delete');
 
 Route::get('/posts/{id}/download', [PostsController::class, 'download'])->name('post.download');
+Route::get('/posts/{id}/viewPdf',[PostsController::class, 'viewPdf'])->name('post.viewPdf');

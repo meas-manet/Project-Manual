@@ -47,3 +47,7 @@
     </div>
 </div>
 @endsection
+    
+<script type="text/javascript">
+    document.title = `confirm`;
+</script>

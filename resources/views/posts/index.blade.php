@@ -16,7 +16,7 @@
                                   <p class="card-text">{{$post->body}}</p>
                                 </div>
                                 <div class="card-footer  bg-light text-dark">
-                                    <small>Wrtten on {{$post->created_at}} by {{$post->user->name}}</small>
+                                    <small>Wrtten on {{$post->created_at}} by </small><i>{{$post->user->name}}</i>
                                     <a href="/posts/{{$post->id}}" class="btn btn-dark float-right">View</a>
                                 </div>
                             </div>
@@ -32,3 +32,8 @@
         </div>
     </div>
 @endsection
+
+    
+<script type="text/javascript">
+    document.title = `Post`;
+</script>
